@@ -32,12 +32,11 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Keep looping until we've reached the end of the list (which means keep looping
         // as long as the current index position is less than the length of the list)
-        int index = 0;
-        while(index < words.size()){
+
+        for (int index = 0; index < words.size(); index++){
             TextView wordView = new TextView(this);
             wordView.setText(words.get(index));
             rootView.addView(wordView);
-            index++;
         }
     }
 }
