@@ -30,7 +30,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
 
         // Get the {@link AndroidFlavor} object located at this position in the list
-        words currentWords = getItem(position);
+        Word currentWords = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView defaultTrasnlation = (TextView) listItemView.findViewById(R.id.default_text_view);
@@ -39,7 +39,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         TextView miwokTranslation = (TextView) listItemView.findViewById(R.id.miwok_text_view);
 
-        miwokTranslation.setText(currentWords.getMiwokTranslation);
+        miwokTranslation.setText(currentWords.getMiwokTranslation());
 
 
         return listItemView;
