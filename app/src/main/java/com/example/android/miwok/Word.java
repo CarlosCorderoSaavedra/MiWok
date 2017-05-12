@@ -9,10 +9,12 @@ public class Word {
     // Default and MiWok translation variables
     private String mDefaultTranslation;
     private String mMiwokTranslation;
+    private int mImageResourceID;
 
-    public Word(String defaultTranslation, String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation,int imageResourceID){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mImageResourceID = imageResourceID;
     }
 
     //Getters to get the default and the miWok translation words
@@ -23,5 +25,7 @@ public class Word {
     public String getMiwokTranslation(){
         return mMiwokTranslation;
     }
+
+    public int getImageResourceID() {return mImageResourceID; }
 }
 
