@@ -13,12 +13,18 @@ public class Word {
     private static final int NO_IMAGE_PROVIDED = -1;
 
 
+    public Word(String defaultTranslation, String miwokTranslation){
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+    }
 
     public Word(String defaultTranslation, String miwokTranslation,int imageResourceID){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceID = imageResourceID;
     }
+
+
 
     //Getters to get the default and the miWok translation words
     public String getDefaultTranslation(){
