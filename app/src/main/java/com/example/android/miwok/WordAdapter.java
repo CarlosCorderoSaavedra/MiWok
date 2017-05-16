@@ -10,12 +10,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Shine on 10/05/2017.
- */
-
-
-
 public class WordAdapter extends ArrayAdapter<Word> {
 
     public WordAdapter (Activity context , ArrayList<Word> words){
@@ -34,7 +28,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
         Word currentWords = getItem(position);
 
         ImageView imageResource = (ImageView) listItemView.findViewById(R.id.image_resource);
-        imageResource.setImageResource(currentWords.getImageResourceID());
+        if(currentWords.hasImage()){
+            imageResource.setImageResource(currentWords.getImageResourceID());
+        }else{
+            imageResource.setVisibility(View.GONE);
+        }
+
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView defaultTrasnlation = (TextView) listItemView.findViewById(R.id.default_text_view);
