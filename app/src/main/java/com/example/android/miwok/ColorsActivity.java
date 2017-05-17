@@ -55,6 +55,12 @@ public class ColorsActivity extends AppCompatActivity {
         });
     }
 
+    protected void onStop() {
+        super.onStop();
+
+        releaseMediaPlayer();
+    }
+
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
