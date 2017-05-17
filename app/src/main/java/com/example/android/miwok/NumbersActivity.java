@@ -51,10 +51,11 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position , long id){
-                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this, words.get(position).getAudioResourceID());
                 mMediaPlayer.start();
                 Log.v("NumbersActivity" , "Current word: " +words);
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
     }

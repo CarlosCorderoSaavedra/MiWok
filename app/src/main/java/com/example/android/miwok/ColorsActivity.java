@@ -45,11 +45,11 @@ public class ColorsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+
                 mMediaPlayer = MediaPlayer.create(ColorsActivity.this, words.get(position).getAudioResourceID());
                 mMediaPlayer.start();
                 Log.v("ColorsActivity", "Current word: " + words);
-
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
 
             }
         });

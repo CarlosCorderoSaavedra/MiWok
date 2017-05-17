@@ -46,10 +46,11 @@ public class PhrasesActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+
                 mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, words.get(position).getAudioResourceID());
                 mMediaPlayer.start();
                 Log.v("PhrasesActivity", "Current word: " + words);
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
 
             }
         });
